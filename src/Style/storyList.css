@@ -1,0 +1,29 @@
+.table_style {
+  width: 80%;
+  margin: auto;
+}
+.span_style {
+  display: flex !important;
+  justify-content: space-between;
+}
+.reaction_style {
+  border-left: 3px solid;
+  border-left-color: black;
+}
+.container_style {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.user_name_style {
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: blue;
+}
+.link_style {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.style_link {
+  font-size: 20px;
+}

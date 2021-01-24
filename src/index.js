@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import App from "./App";
+import * as serviceWorker from "./serviceworker";
+import "bootstrap/dist/css/bootstrap.min.css";
+import store from "./store";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import StoryList from "./components/storyList";
+import StoryDetail from "./components/storyDetail";
 
-ReactDOM.render(
+const routing = (
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Provider store={store}>
+      <Router>
+        <div>
+          <Route path="/" exact component={App} />
+          <Route path="/storyList" component={StoryList} />
+          <Route path="/storyDetail" component={StoryDetail} />
+        </div>
+      </Router>
+    </Provider>
+  </React.StrictMode>
 );
+ReactDOM.render(routing, document.getElementById("root"));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+serviceWorker.unregister();
+export { Router, Route, Switch, withRouter } from "react-router-dom";
