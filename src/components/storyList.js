@@ -53,7 +53,6 @@ function StoryList(props) {
               </span>
               <span>Type:{value.type} </span>
               <span> Author:{value.user} </span>
-              <img src="src/images/linkImg.svg" className="githubIcon" />
             </div>
           </span>
         );

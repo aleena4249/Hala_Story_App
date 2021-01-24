@@ -10,12 +10,12 @@ export const getTopStoriesId = async () => {
     })
     .catch(function(error) {});
   const newidsObj = idsObj.slice(0, 20);
-  newidsObj.map(item => {
-    getEachStory(item).then(function(result) {
-      //console.log("result", result);
-      topStoryArray.push(result);
+  newidsObj &&
+    newidsObj.map(item => {
+      getEachStory(item).then(function(result) {
+        topStoryArray.push(result);
+      });
     });
-  });
   return topStoryArray;
 };
 
@@ -34,14 +34,13 @@ const getEachStory = async item => {
 };
 
 export const getStoryDetailFun = item => {
-  console.log("item", item);
-  item.map(elem => {
-    getStoryDetails(elem).then(function(result) {
-      //console.log("result", result);
-      storyCommmentArray.push(result);
+  item &&
+    item.map(elem => {
+      getStoryDetails(elem).then(function(result) {
+        //console.log("result", result);
+        storyCommmentArray.push(result);
+      });
     });
-  });
-  console.log("storyCommmentArray", storyCommmentArray);
   return storyCommmentArray;
 };
 
